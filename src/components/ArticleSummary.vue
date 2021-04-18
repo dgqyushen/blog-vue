@@ -27,7 +27,7 @@
 
             </v-card-title>
             <v-card-subtitle>
-              <span>
+              <span v-if="item.isTop" style="color: #FF7242">
                 <i class="iconfont iconzhiding"/>置顶
               </span>
               <span>
@@ -97,7 +97,7 @@ export default {
   beforeMount() {
     var that = this;
      // this.$axios.get("https://www.fastmock.site/mock/9d676fa4124289af454530c1a42418c2/test/blog/test").then(function (response) {
-     this.$axios.get("http://localhost:8081/blog/getAll").then(function (response) {
+     this.$axios.get("/api/blog/getAll").then(function (response) {
       // console.log(response.data.data);
       that.articleList = response.data.data;
       // console.log(that.articleList);

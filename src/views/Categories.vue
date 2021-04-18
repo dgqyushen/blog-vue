@@ -49,7 +49,7 @@ export default {
     RunTime,
   },
   beforeMount() {
-    this.$axios.get("http://localhost:8081/categories/getAll").then(({data})=>{
+    this.$axios.get("/api/categories/getAll").then(({data})=>{
       // console.log(data.data.categoriesName);
       this.list = data.data.categoriesName;
       this.num = data.data.num;

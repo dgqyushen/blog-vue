@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="comment">
   <div class="comment-title">
     <i class="iconfont iconpinglunzu" />评论
   </div>
@@ -137,6 +137,7 @@ export default {
   width: 300px;
 
 }
+
 
 
 </style>

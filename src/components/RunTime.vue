@@ -115,10 +115,10 @@ export default {
   },
   beforeMount() {
     let that = this;
-    this.$axios.get("http://localhost:8081/blog/getBlogNum").then(function (response) {
+    this.$axios.get("/api/blog/getBlogNum").then(function (response) {
       that.blog_num = response.data.data;
     })
-    this.$axios.get("http://localhost:8081/blog/getLatestDay").then(function (response) {
+    this.$axios.get("/api/blog/getLatestDay").then(function (response) {
       that.latestDay = response.data;
     })
   }

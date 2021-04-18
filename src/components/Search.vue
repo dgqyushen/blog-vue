@@ -240,7 +240,7 @@ export default {
     keywords(value) {
       this.flag = value.trim() != "" ? true : false;
       let that = this;
-      this.$axios.get("http://localhost:8081/blog/searchContent",{
+      this.$axios.get("/api/blog/searchContent",{
         params: {
           content: value
         }

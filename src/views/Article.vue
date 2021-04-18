@@ -162,6 +162,7 @@
 
           <Comment :blogId="id"></Comment>
 
+          <v-card-actions></v-card-actions>
         </v-card>
 
 
@@ -169,19 +170,13 @@
       <!--      信息框-->
       <v-col cols="12" md="2">
         <v-card style="margin-top: 30px; padding-left: 5%" >
-
           <div class="right-title">
             <i class="iconfont iconhanbao" style="font-size:16.8px" />
             <span>目录</span>
           </div>
           <div id="toc">
-
           </div>
-
-
         </v-card>
-
-
       </v-col>
       <v-spacer></v-spacer>
     </v-row>
@@ -277,19 +272,19 @@ export default {
       if (this.likeFlag!==true){
         this.likeNum++;
         this.likeFlag = true;
-        let url = "http://localhost:8081/likeNum/"+this.id;
+        let url = "/api/likeNum/"+this.id;
         this.$axios.post(url);
       }else {
         this.likeNum--;
         this.likeFlag = false;
-        let url = "http://localhost:8081/likeNum/"+this.id;
+        let url = "/api/likeNum/"+this.id;
         this.$axios.delete(url);
       }
 
     },
     getArticle: function () {
       const that = this;
-      this.$axios.get("http://localhost:8081/blog/getOneById",{
+      this.$axios.get("/api/blog/getOneById",{
           params: {
             id: that.id
           }
@@ -389,7 +384,7 @@ export default {
     },
     getCategoriesByBlogId(){
       let that = this;
-      this.$axios.get("http://localhost:8081/categories/getByBlogId",{
+      this.$axios.get("/api/categories/getByBlogId",{
         params: {
           blogId: that.id
         }
@@ -399,7 +394,7 @@ export default {
     },
     getLikeNum(){
       const that = this;
-      this.$axios.get("http://localhost:8081/likeNum/get",{
+      this.$axios.get("/api/likeNum/get",{
         params: {
           blogId: that.id
         }

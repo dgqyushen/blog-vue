@@ -18,7 +18,7 @@
             在读大二，新能源专业
             </div>
             <div>
-              项目为前端Vue与后端springboot结合，用作自己对springboot的加强使用~
+              项目为前端Vue与后端springboot结合，用作自己对springboot的理解~
             </div>
           </div>
 

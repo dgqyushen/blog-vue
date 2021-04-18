@@ -54,9 +54,9 @@ export default {
   },
   beforeMount() {
     const that = this;
-    this.$axios.get("http://localhost:8081/comment/get").then(({data})=>{
+    this.$axios.get("/api/comment/get").then(({data})=>{
       that.commentList = data.data;
-      console.log(that.commentList);
+      // console.log(that.commentList);
     })
   },
   computed:{

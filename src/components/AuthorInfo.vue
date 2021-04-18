@@ -95,7 +95,7 @@ export default {
           that.from = response.data.from;
         }
     );
-    this.$axios.get("http://localhost:8081/blog/getBlogNum").then(function (response) {
+    this.$axios.get("/api/blog/getBlogNum").then(function (response) {
       that.blog_num = response.data.data;
     })
   }
