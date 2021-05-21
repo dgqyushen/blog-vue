@@ -27,7 +27,7 @@
 
             </v-card-title>
             <v-card-subtitle>
-              <span v-if="item.isTop" style="color: #FF7242">
+              <span v-if="item.blogTop" style="color: #FF7242">
                 <i class="iconfont iconzhiding"/>置顶
               </span>
               <span>
