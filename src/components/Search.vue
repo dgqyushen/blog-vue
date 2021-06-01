@@ -177,7 +177,7 @@
         <ul>
           <li class="search-reslut" v-for="item of articleList" :key="item.id">
             <!-- 文章标题 -->
-            <a @click="goTo(item.blogId)" v-html="item.blogTitle" />
+            <a @click="goTo(item.blogId)" v-html="item.blogTitle" style="text-decoration: none;"/>
             <!-- 文章内容 -->
             <p
                 class="search-reslut-content text-justify"
@@ -311,4 +311,6 @@ export default {
   margin: 20px 0;
   border: 2px dashed #d2ebfd;
 }
+
+
 </style>

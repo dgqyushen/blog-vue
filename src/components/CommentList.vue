@@ -20,11 +20,11 @@
         <v-row v-for="item in commentList" :key="item.id">
           <v-col cols="12" md="3">
 <!--            <v-avatar color="primary" rounded size="56"><img src="https://www.static.talkxj.com/avatar/blogger.jpg" alt=""></v-avatar>-->
-            <v-avatar color="primary" rounded size="56"><img :src="item.avatar" alt=""></v-avatar>
+            <v-avatar color="primary" rounded size="56"><img :src="item.avatar" alt="" ></v-avatar>
           </v-col>
-          <v-col cols="12" md="9" >
+          <v-col cols="12" md="8" offset-md="1">
             <div class="comment-content">
-            {{item.content}}
+            <strong>{{item.content}}</strong>
             </div>
             <div style="margin-top: 10px">
               <span>评论文章:{{item.blogId}} </span>
