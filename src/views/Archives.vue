@@ -67,16 +67,16 @@ export default {
     TimelineTitle
   },
   beforeMount() {
-    let that = this;
-    // this.$axios.get("http://localhost:8081/viewBlog/getAll").then(function (response) {
-    this.$axios.get("/api/viewBlog/getAll").then(function (response) {
-      // console.log(response.data);
-      that.archiveList = response.data;
-    });
-    this.$axios.get("/api/viewBlog/getNum").then(function (response){
-    // this.$axios.get("http://localhost:8081/viewBlog/getNum").then(function (response){
-      // console.log(response.data.data);
-      that.count = response.data.data;
+    // let that = this;
+    // // this.$axios.get("http://localhost:8081/viewBlog/getAll").then(function (response) {
+    // this.$axios.get("/api/blog/getSimpleBlog").then(function (response) {
+    //   // console.log(response.data);
+    //   that.archiveList = response.data.data;
+    //   that.count = that.archiveList.length;
+    // });
+    this.$axios.get("/api/blog/getSimpleBlog").then(({data}) => {
+      this.archiveList = data.data;
+      this.count = data.data.length;
     })
   }
 }
