@@ -16,7 +16,6 @@
     "highlight.js": "^10.6.0",
     "markdown-it": "^12.0.4",
     "tocbot": "^4.12.2",
-    "view-design": "^4.0.0",
     "vue": "^2.6.11",
     "vue-cute-timeline": "^1.2.8",
     "vue-router": "^3.2.0",

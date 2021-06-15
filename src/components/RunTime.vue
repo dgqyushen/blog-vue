@@ -41,7 +41,7 @@
           <!--          先写死，后期从后端拿数据-->
           <v-spacer></v-spacer>
           <div style="margin-left: 38%">
-            10k
+            {{characterAccount}}k
           </div>
 
         </v-row>
@@ -71,7 +71,8 @@ export default {
     return {
       runtime: '',
       blog_num:'',
-      latestDay:''
+      latestDay:'',
+      characterAccount: ''
     }
   },
   methods: {
@@ -117,9 +118,13 @@ export default {
     let that = this;
     this.$axios.get("/api/blog/getBlogNum").then(function (response) {
       that.blog_num = response.data.data;
-    })
+    });
     this.$axios.get("/api/blog/getLatestDay").then(function (response) {
       that.latestDay = response.data;
+    });
+    this.$axios.get("/api/blog/getAllBlogsCharacterAccount").then(({data})=>{
+      this.characterAccount = data.data/1000;
+      this.characterAccount = this.characterAccount.toFixed(1);
     })
   }
 }

@@ -20,7 +20,7 @@
         <v-row v-for="item in commentList" :key="item.id">
           <v-col cols="12" md="3">
 <!--            <v-avatar color="primary" rounded size="56"><img src="https://www.static.talkxj.com/avatar/blogger.jpg" alt=""></v-avatar>-->
-            <v-avatar color="primary" rounded size="56"><img :src="item.avatar" alt="" ></v-avatar>
+            <v-avatar color="primary" rounded size="56"><img :src="item.commentAvatar" alt="" ></v-avatar>
           </v-col>
           <v-col cols="12" md="8" offset-md="1">
             <div class="comment-content">

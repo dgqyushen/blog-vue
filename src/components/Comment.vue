@@ -40,7 +40,7 @@
     <div v-for="(item,index) in commentList" :key="item.id" style="margin-bottom: 10px">
       <v-card>
         <v-card-title>
-          <v-avatar rounded size="26" style="margin-right: 1%"><img :src=item.avatar alt=""></v-avatar>
+          <v-avatar rounded size="26" style="margin-right: 1%"><img :src=item.commentAvatar alt=""></v-avatar>
           <div style="font-size: 15px; font-weight: bold">{{item.author}}</div>
           <div style="font-size: 5px; font-weight: lighter; margin-left: 1%"> 发表时间: {{getCommentTime(item.date)}}</div></v-card-title>
         <v-card-subtitle></v-card-subtitle>
@@ -93,7 +93,7 @@ export default {
       //   console.log(response);
       // })
 
-      this.$axios.post("http://localhost:8081/comment/add",viewComment).then(function (resp) {
+      this.$axios.post("/api/comment/add",viewComment).then(function (resp) {
         window.location.reload();
       })
     }
@@ -119,7 +119,7 @@ export default {
   },
   beforeMount() {
     let that = this;
-    this.$axios.get("http://localhost:8081/comment/"+this.blogId).then(function (resp) {
+    this.$axios.get("/api/comment/"+this.blogId).then(function (resp) {
       // console.log(resp.data)
       that.commentList = resp.data;
       that.count = that.commentList.length;
